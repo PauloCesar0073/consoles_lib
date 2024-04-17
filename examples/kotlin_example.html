@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kotlin examples</title>
+    <style>
+    body {
+        background-color: #4a0432;
+
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 3;
+        font-family: 'Courier New', monospace;
+    }
+
+    h1 {
+        text-align: center;
+        color: #9679c8;
+    }
+        /* Estilos para o console */
+        #console {
+            background-color: #0D0D0D;
+    
+            position: relative;
+            width: 97%;
+            height: 30vh;
+            border-radius: 8px;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1 >"KOTLIN CODE EXAMPLE"</h1>
+    <div id="console"></div>
+
+<script src="../src/Consoles_lib.js"></script>
+
+<script>
+
+const consoleElement = document.getElementById('console');
+const digitConsole = new Consoles_lib
+(consoleElement);
+
+        // Código Kotlin a ser formatado
+        const codeParts = [
+            { content: 'fun', styles: { color: '#d67804', fontWeight: 'bold' } },
+            { content: ' main', styles: { color: '#00a2e7' } },
+            { content: '() {\n', styles: { color: '#fbfbfb' } },
+            { content: '// DECLARANDO VARS E VAL COM SEUS TIPOS PRIMITIVO EM KOTLIN\n\n\n', styles: { color: '#888888' } },
+            { content: 'val', styles: { color: '#d67804' } },
+            { content: ' intValue =', styles: { color: '#9CB7C6' } },
+            { content: '  42\n', styles: { color: '#1ca8db' } },
+            { content: 'val', styles: { color: '#d67804' } },
+            { content: ' doubleValue', styles: { color: '#9CB7C6' } },
+            { content: '  3.14\n', styles: { color: '#1ca8db' } },
+            { content: 'val', styles: { color: '#d67804' } },
+            { content: ' charValue =', styles: { color: '#9CB7C6' } },
+            { content: ' \'A\'\n', styles: { color: '#009c00' } },
+            { content: 'val', styles: { color: '#d67804' } },
+            { content: ' boolValue =', styles: { color: '#9CB7C6' } },
+            { content: ' true\n', styles: { color: '#d67804' } },
+            { content: 'val', styles: { color: '#d67804' } },
+            { content: ' stringValue =', styles: { color: '#9CB7C6' } },
+            { content: '  "Hello"\n', styles: { color: '#009c00' } },
+            { content: 'val', styles: { color: '#d67804' } },
+            { content: ' floatValue =', styles: { color: '#9CB7C6' } },
+            { content: ' 3.14159f\n', styles: { color: '#1ca8db' } },
+            { content: '\n}', styles: { color: '#fbfbfb' } }
+        ];
+
+
+
+// Cria e adiciona um botão de cópia para o código
+const copyButton = digitConsole.createCopyButton(codeParts);
+
+digitConsole.addElement({ type: 'html',element:copyButton });
+
+// Gera e exibe o código formatado no console
+digitConsole.addElement({ type: 'formattedCode', code: codeParts, language: 'kotlin'  });
+
+
+
+
+</script>
+
+</body>
+</html>
